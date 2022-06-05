@@ -13,7 +13,7 @@ Emulate servers with docker.
 
 ## How to run
 
-1. `docker-compose up -d`
+1. `docker compose up -d`
     - This starts two server:
         - Ansible-control
         - Example-server
