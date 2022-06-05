@@ -1,0 +1,17 @@
+---
+- name: Update and Run web servers
+  hosts: example-server
+  remote_user: ansible-user
+
+  tasks:
+  - name: Ensure nginx is at the latest version  
+    become: true
+    apt:
+      name: nginx
+      update_cache: yes
+      state: latest
+  - name: Start service nginx, if not started
+    become: true
+    ansible.builtin.service:
+      name: nginx
+      state: started

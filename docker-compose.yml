@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  ansible-control: 
+    build: 
+      context: ansible-control
+    entrypoint: sleep infinity
+    
+  example-server:
+    build:
+      context: example-server
+    entrypoint: sleep infinity
+    ports:
+      - '8080:80'
